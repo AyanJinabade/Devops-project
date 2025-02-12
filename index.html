@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Equipment Catalog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gym Equipment Catalog</h1>
+        <p>Browse our collection of gym equipment!</p>
+    </header>
+
+    <main>
+        <section class="filter">
+            <label for="category">Filter by Category:</label>
+            <select id="category" onchange="filterEquipment()">
+                <option value="all">All</option>
+                <option value="cardio">Cardio</option>
+                <option value="strength">Strength</option>
+                <option value="flexibility">Flexibility</option>
+            </select>
+        </section>
+
+        <section class="equipment-list" id="equipment-list">
+            <!-- Equipment items will be populated here via JavaScript -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Gym Equipment Store. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

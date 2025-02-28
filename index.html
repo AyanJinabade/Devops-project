@@ -4,33 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gym Equipment Catalog</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styling for the catalog */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        header p {
+            margin: 5px 0;
+        }
+        main {
+            padding: 20px;
+        }
+        .filter {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .filter h2 {
+            margin-top: 0;
+        }
+        .filter form {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .filter label {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .filter select, .filter input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .product {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .product button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .product button:hover {
+            background-color: #45a049;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Gym Equipment Catalog</h1>
-        <p>Browse our collect
-
+        <p>Browse our collection of gym equipment!</p>
+    </header>
+    
     <main>
         <section class="filter">
-            <label for="category">Filter by Category:</label>
-            <select id="category" onchange="filterEquipment()">
-                <option value="all">All</option>
-                <option value="cardio">Cardio</option>
-                <option value="strength">Strength</option>
-                <option value="flexibility">Flexibility</option>
-            </select>
+            <h2>Filter Equipment</h2>
+            <form action="#" method="get">
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="cardio">Cardio</option>
+                    <option value="strength">Strength</option>
+                    <option value="flexibility">Flexibility</option>
+                </select>
+
+                <label for="brand">Brand:</label>
+                <select id="brand" name="brand">
+                    <option value="brand1">Brand 1</option>
+                    <option value="brand2">Brand 2</option>
+                    <option value="brand3">Brand 3</option>
+                </select>
+
+                <label for="price">Price Range:</label>
+                <input type="range" id="price" name="price" min="0" max="5000">
+
+                <button type="submit">Apply Filters</button>
+            </form>
         </section>
 
-        <section class="equipment-list" id="equipment-list">
-            <!-- Equipment items will be populated here via JavaScript -->
+        <section class="products">
+            <h2>Featured Equipment</h2>
+            <div class="product-list">
+                <article class="product">
+                    <h3>Treadmill</h3>
+                    <img src="treadmill.jpg" alt="Treadmill" />
+                    <p>High-quality treadmill for all fitness levels. Adjustable speed and incline.</p>
+                    <button>Add to Cart</button>
+                </article>
+
+                <article class="product">
+                    <h3>Dumbbells</h3>
+                    <img src="dumbbells.jpg" alt="Dumbbells" />
+                    <p>Set of adjustable dumbbells for strength training. Durable and easy to use.</p>
+                    <button>Add to Cart</button>
+                </article>
+
+                <article class="product">
+                    <h3>Exercise Bike</h3>
+                    <img src="exercise-bike.jpg" alt="Exercise Bike" />
+                    <p>Compact and efficient exercise bike with multiple resistance levels.</p>
+                    <button>Add to Cart</button>
+                </article>
+
+                <article class="product">
+                    <h3>Yoga Mat</h3>
+                    <img src="yoga-mat.jpg" alt="Yoga Mat" />
+                    <p>Non-slip yoga mat for comfortable workouts and stretches.</p>
+                    <button>Add to Cart</button>
+                </article>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Gym Equipment Store. All Rights Reserved.</p>
+        <p>Contact Us: info@gymcatalog.com</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
